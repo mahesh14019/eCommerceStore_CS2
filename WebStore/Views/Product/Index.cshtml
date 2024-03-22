@@ -1,0 +1,64 @@
+﻿<div class="container">
+    <form asp-action="Index" asp-controller="Product">
+@*     <div class="row m-2">
+        <div class="col">
+            <label>Product Name</label>
+            <input name="searchString" type="text" class="form-control">
+        </div>
+        <div class="col">
+            <label>Author</label>
+            <input type="text" class="form-control">
+        </div>
+        <div class="col">
+            <label>ISBN</label>
+            <input type="text" class="form-control">
+        </div>
+        </div>*@
+    @* <div class="add-prod"> *@
+        @* <div class="dt-search">
+            <a asp-action="Create" class="btn btn-dark">Add Product</a>
+    </div>  *@
+    <div class="row m-2 p-2">
+
+        <div class="col">
+                <div class="dt-search">
+                    <a asp-action="Create" class="btn btn-dark">Add Product</a>
+                </div>
+                <table id="tblData" class="table table-bordered table-striped">
+                <thead class="small text-uppercase bg-body text-muted">
+                    <tr>
+                        <th>
+                            ProductId
+                        </th>
+                        <th>
+                            Product Name
+                        </th>
+                        <th>
+                            Author
+                        </th>
+                        <th>
+                            ISBN
+                        </th>
+                        <th>
+                            Price
+                        </th>
+                        <th>
+                            Added Date
+                        </th>
+                        <th>
+                            Action
+                        </th>
+                    </tr>
+                </thead>
+            </table>
+        </div>
+    </div>
+    </form>
+</div>
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="//cdn.datatables.net/2.0.2/js/dataTables.min.js"></script>
+    <script src="~/js/Product.js"></script>
+}
+

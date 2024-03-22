@@ -1,0 +1,99 @@
+﻿@model IEnumerable<WebStore.Models.Product>
+@* <p>
+    <a asp-action="Create">Create New</a>
+</p> *@
+<span>@TempData["msg"]</span>
+<link href="~/lib/datatables/css/dataTables.bootstrap4.min.css" rel="stylesheet" />
+<div class="container">
+    <div class="row">
+        <div class="col-6 mb-3 mb-lg-5">
+            <a asp-action="Create" class="btn btn-light btn-sm">Add Product</a>
+        </div>
+        <div class="col-6 mb-3 mb-lg-5">
+            <a asp-action="Create" class="btn btn-light btn-sm">Add Product</a>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-12 mb-3 mb-lg-5">
+            <div class="overflow-hidden card table-nowrap table-card">
+                <div class="card-header d-flex justify-content-between align-items-center">
+                    <a asp-action="Create" class="btn btn-light btn-sm">Add Product</a>
+                </div>
+                <div class="table-responsive">
+                    @using (Html.BeginForm("", "Product", FormMethod.Post))
+                    {
+                        <table id="tblData" class="table table-bordered table-striped">
+                            <thead class="small text-uppercase bg-body text-muted">
+                                <tr>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ProductId)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ProductName)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Author)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.ISBN)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.Price)
+                                    </th>
+                                    <th>
+                                        @Html.DisplayNameFor(model => model.AddedDate)
+                                    </th>
+                                    <th>
+                                        Action
+                                    </th>
+                                </tr>
+                            </thead>
+
+                            @* <tbody>
+                        @foreach (var item in Model)
+                        {
+                        <tr class="align-middle">
+                        <td> @Html.DisplayFor(modelItem => item.ProductName)</td>
+                        <td> @Html.DisplayFor(modelItem => item.Author)</td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.ISBN)
+                        </td>
+                        <td>
+                        @Html.DisplayFor(modelItem => item.Price)
+                        </td>
+                        <td>
+                        @item.AddedDate.ToString("dd-MM-yyyy")
+                        </td>
+
+                        <td class="text-end">
+                        <div class="drodown">
+                        <a data-bs-toggle="dropdown" href="#" class="btn p-1">
+                        <i class="fa fa-bars" aria-hidden="true"></i>
+                        </a>
+                        <div class="dropdown-menu dropdown-menu-end">
+                        @Html.ActionLink("View Details", "Details", new { productId = item.ProductId }, new { @class = "dropdown-item" })
+                        @Html.ActionLink("Edit Details", "Edit", new { productId = item.ProductId }, new { @class = "dropdown-item" })
+                        @Html.ActionLink("Delete", "Delete", new { productId = item.ProductId }, new { @class = "dropdown-item" })
+
+                        </div>
+                        </div>
+                        </td>
+                        </tr>
+                        }
+                        </tbody> *@
+                        </table>
+                    }
+
+                    </>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="//cdn.datatables.net/2.0.2/js/dataTables.min.js"></script>
+    <script src="~/js/Product.js"></script>
+}
+
